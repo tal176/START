@@ -5,10 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> My ASP.NET Application</title>
     <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
-    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <script src="~/Scripts/modernizr-2.6.2.js"></script>
-    @*<script src="~/Scripts/jquery-ui-1.12.1.js"></script>*@
-    @*<script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>*@
+
+
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-route.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.js"></script>
@@ -16,7 +14,8 @@
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-touch.js"></script>
     <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-1.3.3.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="~/Scripts/angular-route.js"></script>
+    <script src="~/Scripts/globals.js"></script>
+    <script src="~/SPA/controllers/Registration.js"></script>
 
     <script src="~/SPA/controllers/HomePageController.js"></script>
     <script src="~/SPA/myAPP.js"></script>
@@ -33,7 +32,19 @@
                 @*@Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })*@
                 <h1>Final Project</h1><hr />
                 <a href="/#/HomePage">Home</a>&nbsp
-                <a href="/#/Test">Test</a>&nbsp
+                <a href="/#/Register">Register</a>&nbsp
+                <a href="/#/Login">Login</a>&nbsp
+
+                <a href="/#/NewItem">Add new item</a>&nbsp
+                <a href="/#/NewCustomer">Add new customer</a>&nbsp
+
+                <a href="/#/Items">Item List</a>&nbsp
+                <a href="/#/Customers">Customer List</a>&nbsp
+
+                <a href="/#/Orders">Customer order</a>&nbsp
+                <a href="/#/Po">Purchase order</a>&nbsp
+
+
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav"></ul>
@@ -44,9 +55,12 @@
             </div>
         </div>
     </div>
-    
-    
+
+    <script src="~/Scripts/jquery.2.2.3.min.js"></script>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <script src="~/Scripts/jquery-1.12.4.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
+
+    
 </body>
 </html>

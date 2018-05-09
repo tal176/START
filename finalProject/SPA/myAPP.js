@@ -9,11 +9,48 @@ var configFunction = function ($routeProvider, $httpProvider) {
             templateUrl: 'SPA/views/HomePage.html',
             controller: HomePageController
         })
-        .when('/Test',
+        .when('/Register',
         {
-            templateUrl: 'SPA/views/test.html',
+            templateUrl: 'SPA/views/Register.html',
+            //controller: HomePageController
+        })
+
+        .when('/Login',
+        {
+            templateUrl: 'SPA/views/Register.html',
             controller: HomePageController
         })
+
+        .when('/NewItem',
+        {
+            templateUrl: 'SPA/views/Register.html',
+            controller: HomePageController
+        })
+
+        .when('/NewCustomer',
+        {
+            templateUrl: 'SPA/views/Register.html',
+            controller: HomePageController
+        })
+
+        .when('/Items',
+        {
+            templateUrl: 'SPA/views/Register.html',
+            controller: HomePageController
+        })
+
+        .when('/Orders',
+        {
+            templateUrl: 'SPA/views/Register.html',
+            controller: HomePageController
+        })
+
+        .when('/Po',
+        {
+            templateUrl: 'SPA/views/Register.html',
+            controller: HomePageController
+        })
+
         .otherwise({
             redirectTo: '/HomePage'
         });
