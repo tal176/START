@@ -1,0 +1,45 @@
+﻿<table class="table table-hover">
+    <thead>
+        <tr>
+            <th class="center">
+                <label class="pos-rel">
+                    <!--<input type="checkbox" class="ace" />-->
+                    <span class="lbl"></span>
+                </label>
+            </th>
+            <th class="detail-col">CustomerId</th>
+            <th>CompanyName</th>
+            <th>CustomerName</th>
+            <th>StreetAdress</th>
+            <th>City</th>
+            <th>Phonework</th>
+            <th>DateLastInvitedYear</th>
+            <th>DateLastInvitedMonth</th>
+            <th>DateLastInvitedDay</th>
+            <th>phone</th>
+            <th>CanSee</th>
+            <!--<th class="hidden-480">Clicks</th>-->
+
+            <th>
+                <i class="ace-icon fa fa-clock-o bigger-110 hidden-480"></i>
+                Update
+            </th>
+
+        </tr>
+        <tr ng-repeat="cust in customers">
+            <td></td>
+            <td>{{cust.CustomerId}}</td>
+            <td>{{cust.CompanyName}}</td>
+            <td>{{cust.CustomerName}}</td>
+            <td>{{cust.AgentName}}</td>
+            <td>{{cust.StreetAdress}}</td>
+            <td>{{cust.City}}</td>
+            <td>{{cust.Phonework}}</td>
+            <td>{{cust.DateLastInvitedYear}}</td>
+            <td>{{cust.DateLastInvitedMonth}}</td>
+            <td>{{cust.DateLastInvitedDay}}</td>
+            <td>{{cust.phone}}</td>
+            <td>{{cust.CanSee}}</td>
+        </tr>
+    </thead>
+</table>

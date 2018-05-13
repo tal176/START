@@ -17,9 +17,10 @@ function Register() {
         success: function (data) {
 
             $.each(data, function (key, item) {
-                if (item.ErrMsg != "OK") {
+                if (item.ErrMsg !== "OK") {
                     alert("Registration Error");
                 }
+                //window.open(/£/Ho,e);
                 return false; //get out of the loop
             });
 

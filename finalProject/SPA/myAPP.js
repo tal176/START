@@ -1,5 +1,6 @@
 ﻿var myAPP = angular.module('myAPP', ['ngRoute', 'ui.bootstrap']);
 myAPP.controller('HomePageController', HomePageController);
+myAPP.controller('SearchCustomersController', SearchCustomersController);
 
 //Handle Routing to be set only within client side (no server)
 var configFunction = function ($routeProvider, $httpProvider) {
@@ -11,26 +12,31 @@ var configFunction = function ($routeProvider, $httpProvider) {
         })
         .when('/Register',
         {
-            templateUrl: 'SPA/views/Register.html',
+            templateUrl: 'SPA/views/Register.html'
             //controller: HomePageController
         })
 
         .when('/Login',
         {
-            templateUrl: 'SPA/views/Register.html',
+            templateUrl: 'SPA/views/Login.html',
             controller: HomePageController
         })
-
+      
         .when('/NewItem',
         {
-            templateUrl: 'SPA/views/Register.html',
-            controller: HomePageController
+            templateUrl: 'SPA/views/AddItem.html'
+            //controller: HomePageController
         })
 
         .when('/NewCustomer',
         {
             templateUrl: 'SPA/views/Register.html',
             controller: HomePageController
+        })
+        .when('/SearchCustomers',
+        {
+            templateUrl: 'SPA/views/SearchCustomers.html',
+            controller: SearchCustomersController
         })
 
         .when('/Items',

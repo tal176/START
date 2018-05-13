@@ -1,12 +1,13 @@
 ﻿
 var HomePageController = function ($scope, $http) {
 
-    $scope.homePageHeader = "Welcome to Homepage";
-    $scope.button = "Login";
+    $scope.homePageHeader = "Welcome to login area";
 
     //********** call server web api method without input paramters ************
-    $http.get('/api/HomePage/GetSomeData/').then(function (response) {
+    $http.get('/api/HomePage/LoginToSystem/').then(function (response) {
         $scope.newUser = response.data;
+        //if ($scope.newUser == 1) {}
+            
     })
 }
 HomePageController.$inject = ['$scope', '$http'];
