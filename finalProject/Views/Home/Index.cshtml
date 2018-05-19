@@ -48,6 +48,11 @@
     <script src="~/SPA/controllers/AddProduct.js"></script>
     <script src="~/SPA/controllers/HomePageController.js"></script>
     <script src="~/SPA/controllers/SearchCustomersController.js"></script>
+    <script src="~/SPA/controllers/CustomerOrder.js"></script>
+    <script src="~/SPA/controllers/SearchItemController.js"></script>
+    <script src="~/SPA/controllers/Feedback.js"></script>
+    <script src="~/SPA/controllers/SearchFeedbackController.js"></script>
+    <script src="~/SPA/controllers/AddCustomer.js"></script>
     <script src="~/SPA/myAPP.js"></script>
 
 </head>
@@ -425,6 +430,7 @@
             <!-- Side Main Menu -->
             <ul class="nav nav-list">
                 <li class="">
+
                     <a href="/#/HomePage">
                         <i class="menu-icon fa fa-tachometer"></i>
                         <span class="menu-text"> Home Page </span>
@@ -433,44 +439,43 @@
                         <i class="menu-icon fa fa-tachometer"></i>
                         <span class="menu-text"> calendar </span>
                     </a>&nbsp
-                    <a href="/#/tableDataExample">
-                        <i class="menu-icon fa fa-tachometer"></i>
-                        <span class="menu-text"> Feedback </span>
-                    </a>
-                    <b class="arrow"></b>
-                </li>
 
-                <li class="">
+                    @*<a href="#" class="dropdown-toggle">
+                <i class="menu-icon fa fa-desktop"></i>
+                <span class="menu-text">
+                    Manager Review
+                </span>
+                <b class="arrow fa fa-angle-down"></b>
+            </a>
+            <b class="arrow"></b>
+            <ul class="submenu">*@
 
+
+                <li class="active open">
                     <a href="#" class="dropdown-toggle">
-                        <i class="menu-icon fa fa-desktop"></i>
+                        <i class="menu-icon fa fa-list"></i>
                         <span class="menu-text">
-                            Customer
+                            Feedback Area
                         </span>
                         <b class="arrow fa fa-angle-down"></b>
                     </a>
-                    <b class="arrow"></b>
+                    <b class="arrow fa fa-angle-down"></b>
                     <ul class="submenu">
-                        <li class="">
-                            <a href="/#/AddCustomer">
+                        <li class="active open">
+                            <a href="/#/AddFeedback">
                                 <i class="menu-icon fa fa-caret-right"></i>
-                                Add Customer
+                                Create new Feedback
                                 <b class="arrow fa fa-angle-down"></b>
-                            </a>
-                        </li>
 
-
-                        <li class="">
-                            <a href="typography.html">
-                                <i class="menu-icon fa fa-caret-right"></i>
-                                Update Customer
                             </a>
                             <b class="arrow"></b>
                         </li>
-                        <li class="">>
-                            <a href="/#/SearchCustomers">
+
+
+                        <li class="">
+                            <a href="/#/ViewFeedback">
                                 <i class="menu-icon fa fa-caret-right"></i>
-                                Search Customer
+                                View Feedback
                                 <b class="arrow fa fa-angle-down"></b>
                             </a>
                             <b class="arrow"></b>
@@ -482,12 +487,65 @@
                 <li class="active open">
                     <a href="#" class="dropdown-toggle">
                         <i class="menu-icon fa fa-list"></i>
-                        <span class="menu-text"> Purchase </span>
+                        <span class="menu-text">
+                            Customer Area
+                        </span>
+                        <b class="arrow fa fa-angle-down"></b>
+                    </a>
+                    <b class="arrow fa fa-angle-down"></b>
+                    <ul class="submenu">
+
+                        <li class="active open">
+                            <a href="/#/NewCustomer">
+                                <i class="menu-icon fa fa-caret-right"></i>
+                                Add Customer
+                                <b class="arrow fa fa-angle-down"></b>
+                            </a>
+                        </li>
+
+
+                        <li class="">
+                            <a href="/#/">
+                                <i class="menu-icon fa fa-caret-right"></i>
+                                Update Customer
+                                <b class="arrow fa fa-angle-down"></b>
+                            </a>
+                        </li>
+
+
+                        <li class="active open">
+                            <a href="/#/SearchCustomers">
+                                <i class="menu-icon fa fa-caret-right"></i>
+                                Search Customer
+                                <b class="arrow fa fa-angle-down"></b>
+                            </a>
+                            <b class="arrow"></b>
+                        </li>
+
+                        <li class="active open">
+                            <a href="/#/CustomerOrder">
+                                <i class="menu-icon fa fa-caret-right"></i>
+                                Customer Order
+                                <b class="arrow fa fa-angle-down"></b>
+                            </a>
+                            <b class="arrow"></b>
+                        </li>
+
+                    </ul>
+                </li>
+
+
+
+
+                <li class="active open">
+                    <a href="#" class="dropdown-toggle">
+                        <i class="menu-icon fa fa-list"></i>
+                        <span class="menu-text"> Item Area</span>
                         <b class="arrow fa fa-angle-down"></b>
                     </a>
                     <b class="arrow"></b>
                     <ul class="submenu">
-                        <li class="active">
+                        <li class="active open">
                             <a href="/#/NewItem">
                                 <i class="menu-icon fa fa-caret-right"></i>
                                 Add Item
@@ -502,150 +560,202 @@
                             </a>
                             <b class="arrow"></b>
                         </li>
-                        <li class="">
-                            <a href="jqgrid.html">
+
+                        <li class="active">
+                            <a href="/#/SearchItems">
                                 <i class="menu-icon fa fa-caret-right"></i>
-                                Search Item
+                                Search Items
                             </a>
                             <b class="arrow"></b>
                         </li>
+
                     </ul>
                 </li>
+
+
 
                 <li class="active open">
                     <a href="#" class="dropdown-toggle">
                         <i class="menu-icon fa fa-list"></i>
-                        <span class="menu-text"> Supplier </span>
+                        <span class="menu-text"> Vendor Area</span>
                         <b class="arrow fa fa-angle-down"></b>
                     </a>
                     <b class="arrow"></b>
                     <ul class="submenu">
-                        <li class="active">
-                            <a href="tables.html">
+                        <li class="">
+                            <a href="/#/NewVendor">
                                 <i class="menu-icon fa fa-caret-right"></i>
-                                Add Supllier
+                                Add Vendor
                             </a>
                             <b class="arrow"></b>
                         </li>
 
                         <li class="">
-                            <a href="jqgrid.html">
+                            <a href="/#/NewVendor">
                                 <i class="menu-icon fa fa-caret-right"></i>
-                                Update Supplier
+                                Update Vendor
                             </a>
                             <b class="arrow"></b>
                         </li>
+
                         <li class="">
-                            <a href="jqgrid.html">
+                            <a href="/#/SearchVendor">
                                 <i class="menu-icon fa fa-caret-right"></i>
-                                Search Supplier
+                                Search Vendor
                             </a>
                             <b class="arrow"></b>
                         </li>
+
+                    </ul>
+                </li>
+
+
+
+                <li class="active open">
+                    <a href="#" class="dropdown-toggle">
+                        <i class="menu-icon fa fa-list"></i>
+                        <span class="menu-text"> Purchase Area</span>
+                        <b class="arrow fa fa-angle-down"></b>
+                    </a>
+                    <b class="arrow"></b>
+                    <ul class="submenu">
+                        <li class="">
+                            <a href="/#/NewPurchaseOrder">
+                                <i class="menu-icon fa fa-caret-right"></i>
+                                Add Purchase order
+                            </a>
+                            <b class="arrow"></b>
+                        </li>
+
+                        <li class="">
+                            <a href="/#/SearchPurchaseOrder">
+                                <i class="menu-icon fa fa-caret-right"></i>
+                                Search Purchase order
+                            </a>
+                            <b class="arrow"></b>
+                        </li>
+
+                        <li class="">
+                            <a href="/#/UpdatePurchaseOrder">
+                                <i class="menu-icon fa fa-caret-right"></i>
+                                Update Purchase order
+                            </a>
+                            <b class="arrow"></b>
+                        </li>
+
+                        <li class="">
+                            <a href="/#/UpdatePurchaseOrder">
+                                <i class="menu-icon fa fa-caret-right"></i>
+                                Transaction Order
+                            </a>
+                            <b class="arrow"></b>
+                        </li>
+
+
                     </ul>
                 </li>
 
                 <!--<li class="">
-                    <a href="#" class="dropdown-toggle">
-                        <i class="menu-icon fa fa-pencil-square-o"></i>
-                        <span class="menu-text"> Forms </span>
-                        <b class="arrow fa fa-angle-down"></b>
-                    </a>
-                    <b class="arrow"></b>
-                    <ul class="submenu">
-                        <li class="">
-                            <a href="form-elements.html">
-                                <i class="menu-icon fa fa-caret-right"></i>
-                                Form Elements
-                            </a>
-                            <b class="arrow"></b>
-                        </li>
-                        <li class="">
-                            <a href="form-elements-2.html">
-                                <i class="menu-icon fa fa-caret-right"></i>
-                                Form Elements 2
-                            </a>
-                            <b class="arrow"></b>
-                        </li>
-                    </ul>
-                </li>-->
+        <a href="#" class="dropdown-toggle">
+            <i class="menu-icon fa fa-pencil-square-o"></i>
+            <span class="menu-text"> Forms </span>
+            <b class="arrow fa fa-angle-down"></b>
+        </a>
+        <b class="arrow"></b>
+        <ul class="submenu">
+            <li class="">
+                <a href="form-elements.html">
+                    <i class="menu-icon fa fa-caret-right"></i>
+                    Form Elements
+                </a>
+                <b class="arrow"></b>
+            </li>
+            <li class="">
+                <a href="form-elements-2.html">
+                    <i class="menu-icon fa fa-caret-right"></i>
+                    Form Elements 2
+                </a>
+                <b class="arrow"></b>
+            </li>
+        </ul>
+    </li>-->
                 <!--<li class="">
-                    <a href="widgets.html">
-                        <i class="menu-icon fa fa-list-alt"></i>
-                        <span class="menu-text"> Widgets </span>
-                    </a>
-                    <b class="arrow"></b>
-                </li>-->
+        <a href="widgets.html">
+            <i class="menu-icon fa fa-list-alt"></i>
+            <span class="menu-text"> Widgets </span>
+        </a>
+        <b class="arrow"></b>
+    </li>-->
                 <!--<li class="">
-                    <a href="calendar.html">
-                        <i class="menu-icon fa fa-calendar"></i>
-                        <span class="menu-text">
-                            Calendar
+        <a href="calendar.html">
+            <i class="menu-icon fa fa-calendar"></i>
+            <span class="menu-text">
+                Calendar
 
-                            <span class="badge badge-transparent tooltip-error" title="2 Important Events">
-                                <i class="ace-icon fa fa-exclamation-triangle red bigger-130"></i>
-                            </span>
-                        </span>
-                    </a>
-                    <b class="arrow"></b>
-                </li>-->
+                <span class="badge badge-transparent tooltip-error" title="2 Important Events">
+                    <i class="ace-icon fa fa-exclamation-triangle red bigger-130"></i>
+                </span>
+            </span>
+        </a>
+        <b class="arrow"></b>
+    </li>-->
                 <!--<li class="">
-                    <a href="#" class="dropdown-toggle">
-                        <i class="menu-icon fa fa-tag"></i>
-                        <span class="menu-text"> More Pages </span>
+        <a href="#" class="dropdown-toggle">
+            <i class="menu-icon fa fa-tag"></i>
+            <span class="menu-text"> More Pages </span>
 
-                        <b class="arrow fa fa-angle-down"></b>
-                    </a>
+            <b class="arrow fa fa-angle-down"></b>
+        </a>
 
-                    <b class="arrow"></b>
-                    <ul class="submenu">
-                        <li class="">
-                            <a href="profile.html">
-                                <i class="menu-icon fa fa-caret-right"></i>
-                                User Profile
-                            </a>
+        <b class="arrow"></b>
+        <ul class="submenu">
+            <li class="">
+                <a href="profile.html">
+                    <i class="menu-icon fa fa-caret-right"></i>
+                    User Profile
+                </a>
 
-                            <b class="arrow"></b>
-                        </li>
-                        <li class="">
-                            <a href="inbox.html">
-                                <i class="menu-icon fa fa-caret-right"></i>
-                                Inbox
-                            </a>
+                <b class="arrow"></b>
+            </li>
+            <li class="">
+                <a href="inbox.html">
+                    <i class="menu-icon fa fa-caret-right"></i>
+                    Inbox
+                </a>
 
-                            <b class="arrow"></b>
-                        </li>
-                    </ul>
-                </li>-->
+                <b class="arrow"></b>
+            </li>
+        </ul>
+    </li>-->
                 <!--<li class="">
-                    <a href="#" class="dropdown-toggle">
-                        <i class="menu-icon fa fa-file-o"></i>
-                        <span class="menu-text">
-                            Other Pages
-                            <span class="badge badge-primary">5</span>
-                        </span>
-                        <b class="arrow fa fa-angle-down"></b>
-                    </a>
+        <a href="#" class="dropdown-toggle">
+            <i class="menu-icon fa fa-file-o"></i>
+            <span class="menu-text">
+                Other Pages
+                <span class="badge badge-primary">5</span>
+            </span>
+            <b class="arrow fa fa-angle-down"></b>
+        </a>
 
-                    <b class="arrow"></b>
-                    <ul class="submenu">
-                        <li class="">
-                            <a href="faq.html">
-                                <i class="menu-icon fa fa-caret-right"></i>
-                                FAQ
-                            </a>
+        <b class="arrow"></b>
+        <ul class="submenu">
+            <li class="">
+                <a href="faq.html">
+                    <i class="menu-icon fa fa-caret-right"></i>
+                    FAQ
+                </a>
 
-                            <b class="arrow"></b>
-                        </li>
-                    </ul>
-                </li>-->
+                <b class="arrow"></b>
+            </li>
+        </ul>
+    </li>-->
             </ul>
-            <!-- /.Side Main Menu -->
+                            <!-- /.Side Main Menu -->
 
-            <div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
-                <i id="sidebar-toggle-icon" class="ace-icon fa fa-angle-double-left ace-save-state" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
-            </div>
-        </div>
+                            <div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
+                                <i id="sidebar-toggle-icon" class="ace-icon fa fa-angle-double-left ace-save-state" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
+                            </div>
+</div>
 
         <div class="main-content">
             <div class="main-content-inner">

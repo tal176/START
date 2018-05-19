@@ -1,7 +1,7 @@
 ﻿
 function AddItem() {
     var $ = jQuery.noConflict();
-    var uri = 'api/HomePage/AddItem';
+    var uri = 'api/Item/AddItem';
     $.ajax({
         url: uri,
         dataType: 'json',
@@ -21,11 +21,7 @@ function AddItem() {
                     alert("Item stock can`t be negative");
                     return false;
                 }
-                else if (item.ErrMsg === "Connection Issue") {
-                    alert("Connection Issue");
-                    return false;
-                }
-                else alert("Ok");
+                else alert("All done, new item in stock");
             });
         }
         

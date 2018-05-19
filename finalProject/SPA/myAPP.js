@@ -1,6 +1,10 @@
 ﻿var myAPP = angular.module('myAPP', ['ngRoute', 'ui.bootstrap']);
 myAPP.controller('HomePageController', HomePageController);
 myAPP.controller('SearchCustomersController', SearchCustomersController);
+myAPP.controller('SearchItemController', SearchItemController);
+myAPP.controller('SearchFeedbackController', SearchFeedbackController);
+
+
 
 //Handle Routing to be set only within client side (no server)
 var configFunction = function ($routeProvider, $httpProvider) {
@@ -16,45 +20,54 @@ var configFunction = function ($routeProvider, $httpProvider) {
             //controller: HomePageController
         })
 
-        .when('/Login',
-        {
-            templateUrl: 'SPA/views/Login.html',
-            controller: HomePageController
-        })
+        //.when('/Login',
+        //{
+        //    templateUrl: 'SPA/views/Login.html',
+        //    controller: HomePageController
+        //})
       
         .when('/NewItem',
         {
-            templateUrl: 'SPA/views/AddItem.html'
-            //controller: HomePageController
+            templateUrl: 'SPA/views/AddItem.html',
+            //controller: AddProduct
+        })
+
+        .when('/SearchItems',
+        {
+            templateUrl: 'SPA/views/SearchItem.html',
+            controller: SearchItemController
         })
 
         .when('/NewCustomer',
         {
-            templateUrl: 'SPA/views/Register.html',
-            controller: HomePageController
+            templateUrl: 'SPA/views/AddCustomer.html',
+            //controller: HomePageController
         })
+
         .when('/SearchCustomers',
         {
             templateUrl: 'SPA/views/SearchCustomers.html',
             controller: SearchCustomersController
         })
 
-        .when('/Items',
+
+
+        .when('/CustomerOrder',
         {
-            templateUrl: 'SPA/views/Register.html',
-            controller: HomePageController
+            templateUrl: 'SPA/views/CustomerOrder.html',
+            //controller: HomePageController
         })
 
-        .when('/Orders',
+        .when('/AddFeedback',
         {
-            templateUrl: 'SPA/views/Register.html',
-            controller: HomePageController
+            templateUrl: 'SPA/views/AddFeedback.html',
+            //controller: HomePageController
         })
 
-        .when('/Po',
+        .when('/ViewFeedback',
         {
-            templateUrl: 'SPA/views/Register.html',
-            controller: HomePageController
+            templateUrl: 'SPA/views/SearchFeedback.html',
+            controller: SearchFeedbackController
         })
 
         .otherwise({

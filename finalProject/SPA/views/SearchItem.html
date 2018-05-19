@@ -1,0 +1,41 @@
+﻿<table class="table table-hover">
+    <thead>
+        <tr>
+            <th class="center">
+                <label class="pos-rel">
+                    <!--<input type="checkbox" class="ace" />-->
+                    <span class="lbl"></span>
+                </label>
+            </th>
+            <th class="detail-col">CompanyName</th>
+            <th>ProductId</th>
+            <th>ProductName</th>
+            <th>Quantity</th>
+            <th>MinStock</th>
+            <th>DateLastInvit</th>
+            <th>ManufItemKey</th>
+            <th>CompanyOfTheManufcter</th>
+            <th>isAviable</th>
+            <!--<th class="hidden-480">Clicks</th>-->
+   
+            <th>
+                <i class="ace-icon fa fa-clock-o bigger-110 hidden-480"></i>
+                Update
+            </th>
+
+        </tr>
+        <tr ng-repeat="itemEntity in Items">
+            <td></td>
+            <td>{{itemEntity.CompanyName}}</td>
+            <td>{{itemEntity.ProductId}}</td>
+            <td>{{itemEntity.ProductName}}</td>
+            <td>{{itemEntity.Quantity}}</td>
+            <td>{{itemEntity.MinStock}}</td>
+            <td>{{itemEntity.DateLastInvit}}</td>
+            <td>{{itemEntity.ManufItemKey}}</td>
+            <td>{{itemEntity.CompanyOfTheManufcter}}</td>
+            <td>{{itemEntity.isAviable}}</td>
+
+        </tr>
+    </thead>
+</table>

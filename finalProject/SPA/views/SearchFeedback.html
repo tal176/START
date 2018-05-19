@@ -1,0 +1,41 @@
+﻿<table class="table table-hover">
+    <thead>
+        <tr>
+            <th class="center">
+                <label class="pos-rel">
+                    <!--<input type="checkbox" class="ace" />-->
+                    <span class="lbl"></span>
+                </label>
+            </th>
+            <th class="detail-col">CompanyName</th>
+            <th>CustomerName</th>
+            <th>FeedbackDesc</th>
+            <th>Date Of creation</th>
+            <th>IsRegister</th>
+            <th>typeIssue</th>
+            <th>HadRead</th>
+            <th>Istreated</th>
+            <!--<th class="hidden-480">Clicks</th>-->
+            <th>
+
+
+                <i class="ace-icon fa fa-clock-o bigger-110 hidden-480"></i>
+                Update
+            </th>
+
+        </tr>
+        <tr ng-repeat="feedbackEntity in GetFeedbacks">
+            <td></td>
+            <td>{{feedbackEntity.CompanyName}}</td>
+            <td>{{feedbackEntity.CustomerName}}</td>
+            <td>{{feedbackEntity.FeedbackDesc}}</td>
+            <td>{{feedbackEntity.dateToBE}}</td>
+            <td>{{feedbackEntity.IsRegister}}</td>
+            <td>{{feedbackEntity.typeIssue}}</td>
+            <td>{{feedbackEntity.HadRead}}</td>
+            <td>{{feedbackEntity.Istreated}}</td>
+
+
+        </tr>
+    </thead>
+</table>

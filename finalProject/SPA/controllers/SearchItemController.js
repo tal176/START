@@ -1,10 +1,10 @@
-﻿var SearchCustomersController = function ($scope, $http) {
+﻿var SearchItemController = function ($scope, $http) {
 
-    
+
 
     //********** call server web api method without input paramters ************
-    $http.get('/api/Customer/SearchCustomers/').then(function (response) {
-        $scope.customers = response.data;
+    $http.get('/api/Item/SearchItem/').then(function (response) {
+        $scope.Items = response.data;
         //if ($scope.newUser == 1) {}
 
     })
