@@ -3,7 +3,7 @@ myAPP.controller('HomePageController', HomePageController);
 myAPP.controller('SearchCustomersController', SearchCustomersController);
 myAPP.controller('SearchItemController', SearchItemController);
 myAPP.controller('SearchFeedbackController', SearchFeedbackController);
-
+myAPP.controller('SearchVendorController', SearchVendorController);
 
 
 //Handle Routing to be set only within client side (no server)
@@ -69,6 +69,27 @@ var configFunction = function ($routeProvider, $httpProvider) {
             templateUrl: 'SPA/views/SearchFeedback.html',
             controller: SearchFeedbackController
         })
+
+
+        .when('/NewVendor',
+        {
+            templateUrl: 'SPA/views/AddVendor.html',
+            //controller: HomePageController
+        })
+
+
+        .when('/SearchVendors',
+        {
+            templateUrl: 'SPA/views/SearchVendor.html',
+            controller: SearchVendorController
+        })
+
+        .when('/AddRecordVendor',
+        {
+            templateUrl: 'SPA/views/AddRecordVendor.html',
+            //controller: SearchVendorController
+        })
+
 
         .otherwise({
             redirectTo: '/HomePage'

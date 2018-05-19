@@ -172,6 +172,8 @@
     <Content Include="Scripts\jquery.2.2.3.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="SPA\controllers\AddCustomer.js" />
+    <Content Include="SPA\controllers\AddRecordVendor.js" />
+    <Content Include="SPA\controllers\AddVendor.js" />
     <Content Include="SPA\controllers\CustomerOrder.js" />
     <Content Include="SPA\controllers\AddProduct.js" />
     <Content Include="SPA\controllers\HomePageController.js" />
@@ -180,10 +182,13 @@
     <Content Include="SPA\controllers\SearchItemController.js" />
     <Content Include="SPA\controllers\Registration.js" />
     <Content Include="SPA\controllers\SearchCustomersController.js" />
+    <Content Include="SPA\controllers\SearchVendorController.js" />
     <Content Include="SPA\myAPP.js" />
     <Content Include="SPA\views\AddCustomer.html" />
     <Content Include="SPA\views\AddFeedback.html" />
     <Content Include="SPA\views\AddItem.html" />
+    <Content Include="SPA\views\AddRecordVendor.html" />
+    <Content Include="SPA\views\AddVendor.html" />
     <Content Include="SPA\views\CustomerOrder.html" />
     <Content Include="SPA\views\HomePage.html" />
     <Content Include="SPA\views\Login.html" />
@@ -191,6 +196,7 @@
     <Content Include="SPA\views\searchCustomers.html" />
     <Content Include="SPA\views\SearchItem.html" />
     <Content Include="SPA\views\SearchFeedback.html" />
+    <Content Include="SPA\views\SearchVendor.html" />
     <Content Include="templateAssets\css\ace-ie.min.css" />
     <Content Include="templateAssets\css\ace-part2.min.css" />
     <Content Include="templateAssets\css\ace-rtl.min.css" />
@@ -332,6 +338,7 @@
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Error.cs" />
     <Compile Include="Models\Login.cs" />
+    <Compile Include="Models\Vendor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

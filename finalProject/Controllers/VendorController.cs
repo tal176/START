@@ -14,81 +14,114 @@ namespace finalProject.Controllers
     public class VendorController : ApiController
     {
 
-        //// Search: Vendor
-        //[System.Web.Http.HttpGet]
-        //public IEnumerable<Item> SearchItem()
-        //{
-        //    List<Item> results = new List<Item>();
-        //    Hashtable prms = new Hashtable();
-        //    DataSet ds = DAL.GetData("sp_get_Items", prms, "HomePageController.cs->getItemTable()");
-        //    if (ds != null && ds.Tables.Count > 0)
-        //    {
-        //        foreach (DataRow row in ds.Tables[0].Rows)
-        //        {
-        //            Item itemEntity = new Item(row["CompanyName"].ToString(), Int32.Parse(row["ProductId"].ToString()),
-        //            row["ProductName"].ToString(), Int32.Parse(row["Quantity"].ToString()),
-        //            Int32.Parse(row["MinStock"].ToString()),
-        //            row["DateLastInvit"].ToString(),
-        //            Int32.Parse(row["ManufItemKey"].ToString()),
-        //            row["CompanyOfTheManufcter"].ToString(),
-        //            Int32.Parse(row["isAviable"].ToString()));
+        // Search: Vendor
+        [System.Web.Http.HttpGet]
+        public IEnumerable<Vendor> SearchVendors()
+        {
+            List<Vendor> results = new List<Vendor>();
+            Hashtable prms = new Hashtable();
+            DataSet ds = DAL.GetData("sp_get_Vendors", prms, "HomePageController.cs->SearchVendors()");
+            if (ds != null && ds.Tables.Count > 0)
+            {
+                foreach (DataRow row in ds.Tables[0].Rows)
+                {
+                    Vendor VendorEntity = new Vendor(row["VendorName"].ToString(), row["VendorCountrey"].ToString(),
+                    row["VendorType"].ToString(), row["VendorPhone"].ToString(),
+                    row["VendorMail"].ToString(),
+                    Int32.Parse(row["Record"].ToString()));
 
-        //            results.Add(itemEntity);
-        //            itemEntity = null;
-        //            GC.Collect();
-        //        }
-        //    }
+                    
+                    results.Add(VendorEntity);
+                    VendorEntity = null;
+                    GC.Collect();
+                }
+            }
 
-        //    return results;
-        //}
+            return results;
+        }
 
 
-        //// Set: Vendor
-        //[System.Web.Http.HttpGet]
-        //public IEnumerable<Error> AddItem(string CompanyName, int ProductId, string ProductName, int Quantity, int MinStock, int ManufItemKey, string CompanyOfTheManufcter)
-        //{
-        //    List<Error> results = new List<Error>();
+        // Set: Vendor
+        [System.Web.Http.HttpGet]
+        public IEnumerable<Error> AddVendor(string VendorName, string VendorCountrey, string VendorType, string VendorPhone, string VendorMail)
+        {
+            List<Error> results = new List<Error>();
 
-        //    Hashtable prms = new Hashtable();
-        //    prms.Add("CompanyName", CompanyName);
-        //    prms.Add("ProductId", ProductId);
-        //    prms.Add("ProductName", ProductName);
-        //    prms.Add("Quantity", Quantity);
-        //    prms.Add("MinStock", MinStock);
-        //    prms.Add("ManufItemKey", ManufItemKey);
-        //    prms.Add("CompanyOfTheManufcter", CompanyOfTheManufcter);
+            Hashtable prms = new Hashtable();
+            prms.Add("VendorName", VendorName);
+            prms.Add("VendorCountrey", VendorCountrey);
+            prms.Add("VendorType", VendorType);
+            prms.Add("VendorPhone", VendorPhone);
+            prms.Add("VendorMail", VendorMail);
 
-        //    Hashtable outputParams = new Hashtable();
-        //    outputParams.Add("returnVal", "");
+            Hashtable outputParams = new Hashtable();
+            outputParams.Add("returnVal", "");
 
-        //    DAL.RunBatch("Sp_add_product", prms, ref outputParams, SqlDbType.Int, "HomePageController.cs->AddItem()");
-        //    if (outputParams.Count > 0)
-        //    {
-        //        foreach (DictionaryEntry item in outputParams)
-        //        {
-        //            Error err = new Error();
-        //            switch (item.Value)
-        //            {
-        //                case 1:
-        //                    err.ErrNumber = 1;
-        //                    err.ErrMsg = "Duplication";
-        //                    break;
-        //                case 2:
-        //                    err.ErrNumber = 2;
-        //                    err.ErrMsg = "Item stock can`t be negative";
-        //                    break;
-        //                case 3:
-        //                    err.ErrNumber = 3;
-        //                    err.ErrMsg = "All done, new item in stock";
-        //                    break;
-        //            }
-        //            results.Add(err);
-        //        }
+            DAL.RunBatch("Sp_add_new_Vendor", prms, ref outputParams, SqlDbType.Int, "HomePageController.cs->AddVendor()");
+            if (outputParams.Count > 0)
+            {
+                foreach (DictionaryEntry item in outputParams)
+                {
+                    Error err = new Error();
+                    switch (item.Value)
+                    {
+                        case 1:
+                            err.ErrNumber = 1;
+                            err.ErrMsg = "Vendor already exist";
+                            break;
+                        case 2:
+                            err.ErrNumber = 2;
+                            err.ErrMsg = "All done, new vendor in your site";
+                            break;
+                    }
+                    results.Add(err);
+                }
 
-        //    }
+            }
 
-        //    return results;
-        //}
+            return results;
+        }
+
+
+        // Set: Comment
+        [System.Web.Http.HttpGet]
+        public IEnumerable<Error> AddRecordVendor(string VendorName, string VendorCountrey, string VendorType, int CustomerRating)
+        {
+            List<Error> results = new List<Error>();
+
+            Hashtable prms = new Hashtable();
+            prms.Add("VendorName", VendorName);
+            prms.Add("VendorCountrey", VendorCountrey);
+            prms.Add("VendorType", VendorType);
+            prms.Add("CustomerRating", CustomerRating);
+
+            Hashtable outputParams = new Hashtable();
+            outputParams.Add("returnVal", "");
+
+            DAL.RunBatch("Sp_Rating_Vendors", prms, ref outputParams, SqlDbType.Int, "HomePageController.cs->AddRecordVendor()");
+            if (outputParams.Count > 0)
+            {
+                foreach (DictionaryEntry item in outputParams)
+                {
+                    Error err = new Error();
+                    switch (item.Value)
+                    {
+                        case 1:
+                            err.ErrNumber = 1;
+                            err.ErrMsg = "Vendor record can`t be negative";
+                            break;
+                        case 2:
+                            err.ErrNumber = 2;
+                            err.ErrMsg = "All done, new record for vendor";
+                            break;
+                    }
+                    results.Add(err);
+                }
+
+            }
+
+            return results;
+        }
 
     }
 }
