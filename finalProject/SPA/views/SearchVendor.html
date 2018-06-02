@@ -8,12 +8,13 @@
                 </label>
             </th>
             <th class="detail-col">VendorName</th>
+            <th>VendorCompany</th>
             <th>VendorCountrey</th>
             <th>VendorType</th>
             <th>VendorPhone</th>
             <th>VendorMail</th>
             <th>Record</th>
-
+            
             <!--<th class="hidden-480">Clicks</th>-->
 
 
@@ -24,14 +25,13 @@
 
         </tr>
         <tr ng-repeat="VendorEntity in Vendors">
-            <td></td>
             <td>{{VendorEntity.VendorName}}</td>
+            <td>{{VendorEntity.VendorCompany}}</td>
             <td>{{VendorEntity.VendorCountrey}}</td>
             <td>{{VendorEntity.VendorType}}</td>
             <td>{{VendorEntity.VendorPhone}}</td>
             <td>{{VendorEntity.VendorMail}}</td>
             <td>{{VendorEntity.Record}}</td>
-
         </tr>
     </thead>
 </table>

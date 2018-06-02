@@ -4,7 +4,9 @@ myAPP.controller('SearchCustomersController', SearchCustomersController);
 myAPP.controller('SearchItemController', SearchItemController);
 myAPP.controller('SearchFeedbackController', SearchFeedbackController);
 myAPP.controller('SearchVendorController', SearchVendorController);
-
+myAPP.controller('ShowOpenPurchaseOrder', ShowOpenPurchaseOrder);
+myAPP.controller('ShowClosePurchaseOrder', ShowClosePurchaseOrder);
+myAPP.controller('CustomerOrderStatus', CustomerOrderStatus);
 
 //Handle Routing to be set only within client side (no server)
 var configFunction = function ($routeProvider, $httpProvider) {
@@ -90,6 +92,29 @@ var configFunction = function ($routeProvider, $httpProvider) {
             //controller: SearchVendorController
         })
 
+        .when('/AddPurchaseOrder',
+        {
+            templateUrl: 'SPA/views/AddPurchaseOrder.html',
+            //controller: SearchVendorController
+        })
+
+        .when('/ShowOpenPurchaseOrder',
+        {
+            templateUrl: 'SPA/views/ShowOpenPurchaseOrder.html',
+            controller: ShowOpenPurchaseOrder
+        })
+
+        .when('/ShowClosePurchaseOrder',
+        {
+            templateUrl: 'SPA/views/ShowClosePurchaseOrder.html',
+            controller: ShowClosePurchaseOrder
+        })
+
+        .when('/CustomerOrderStatus',
+        {
+            templateUrl: 'SPA/views/CustomerOrderStatus.html',
+            controller: CustomerOrderStatus
+        })
 
         .otherwise({
             redirectTo: '/HomePage'

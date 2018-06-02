@@ -1,0 +1,49 @@
+﻿<table class="table table-hover">
+    <thead>
+        <tr>
+            <th class="center">
+                <label class="pos-rel">
+                    <!--<input type="checkbox" class="ace" />-->
+                    <span class="lbl"></span>
+                </label>
+            </th>
+            <th class="detail-col">PurchaseOrderId</th>
+            <th>Order Line</th>
+            <th>Quantity</th>
+            <th>Payment</th>
+            <th>Product Name</th>
+            <th>Vendor Name</th>
+            <th>Bill to company</th>
+            <th>Phone Contact</th>
+            <th>Supposed to Arrive</th>
+            <th>Return Order\Purchase Order</th>
+            <th>Open\Close</th>
+            <th>Year</th>
+            <th>Quarter</th>
+            <!--<th class="hidden-480">Clicks</th>-->
+
+
+            <th>
+                <i class="ace-icon fa fa-clock-o bigger-110 hidden-480"></i>
+                Update
+            </th>
+            
+        </tr>
+        <tr ng-repeat="PurchaseEntity in OpenPurchases">
+            <td>{{PurchaseEntity.PurchaseOrderId}}</td>
+            <td>{{PurchaseEntity.OrderLine}}</td>
+            <td>{{PurchaseEntity.Quantity}}</td>
+            <td>{{PurchaseEntity.Payment}}</td>
+            <td>{{PurchaseEntity.ProductName}}</td>
+            <td>{{PurchaseEntity.VendorName}}</td>
+            <td>{{PurchaseEntity.ShipTo}}</td>
+            <td>{{PurchaseEntity.PhoneContact}}</td>
+            <td>{{PurchaseEntity.SupposedToArrive}}</td>
+            <td>{{PurchaseEntity.ReturnOrderPurchaseOrder}}</td>
+            <td>{{PurchaseEntity.OpenClose}}</td>
+            <td>{{PurchaseEntity.Year}}</td>
+            <td>{{PurchaseEntity.Quarter}}</td>
+
+        </tr>
+    </thead>
+</table>

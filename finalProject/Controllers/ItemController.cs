@@ -91,52 +91,5 @@ namespace finalProject.Controllers
         }
 
 
-        // Update: Item
-        //[System.Web.Http.HttpGet]
-        //public IEnumerable<Error> UpdateItem(int ProductId, string ProductName, int Quantity, int MinStock, int ManufItemKey, string CompanyOfTheManufcter)
-        //{
-        //    List<Error> results = new List<Error>();
-
-        //    Hashtable prms = new Hashtable();
-        //    prms.Add("ProductId", ProductId);
-        //    prms.Add("ProductName", ProductName);
-        //    prms.Add("Quantity", Quantity);
-        //    prms.Add("MinStock", MinStock);
-        //    prms.Add("ManufItemKey", ManufItemKey);
-        //    prms.Add("CompanyOfTheManufcter", CompanyOfTheManufcter);
-
-        //    Hashtable outputParams = new Hashtable();
-        //    outputParams.Add("returnVal", "");
-
-        //    DAL.RunBatch("--", prms, ref outputParams, SqlDbType.Int, "HomePageController.cs->UpdateItem()");
-        //    if (outputParams.Count > 0)
-        //    {
-        //        foreach (DictionaryEntry item in outputParams)
-        //        {
-        //            Error err = new Error();
-        //            switch (item.Value)
-        //            {
-        //                case 1:
-        //                    err.ErrNumber = 1;
-        //                    err.ErrMsg = "Duplication";
-        //                    break;
-        //                case 2:
-        //                    err.ErrNumber = 2;
-        //                    err.ErrMsg = "Item stock can`t be negative";
-        //                    break;
-        //                case 3:
-        //                    err.ErrNumber = 3;
-        //                    err.ErrMsg = "All done, new item in stock";
-        //                    break;
-        //            }
-        //            results.Add(err);
-        //        }
-
-        //    }
-
-        //    return results;
-        //}
-
-
     }
 }

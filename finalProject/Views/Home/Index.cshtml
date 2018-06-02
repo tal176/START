@@ -56,6 +56,10 @@
     <script src="~/SPA/controllers/AddVendor.js"></script>
     <script src="~/SPA/controllers/SearchVendorController.js"></script>
     <script src="~/SPA/controllers/AddRecordVendor.js"></script>
+    <script src="~/SPA/controllers/AddPurchaseOrder.js"></script>
+    <script src="~/SPA/controllers/ShowOpenPurchaseOrder.js"></script>
+    <script src="~/SPA/controllers/ShowClosePurchaseOrder.js"></script>
+    <script src="~/SPA/controllers/CustomerOrderStatus.js"></script>
     <script src="~/SPA/myAPP.js"></script>
 
 </head>
@@ -534,9 +538,18 @@
                             <b class="arrow"></b>
                         </li>
 
+                        <li class="active open">
+                            <a href="/#/CustomerOrderStatus">
+                                <i class="menu-icon fa fa-caret-right"></i>
+                                Customer Order Status
+                                <b class="arrow fa fa-angle-down"></b>
+                            </a>
+                            <b class="arrow"></b>
+                        </li>
+
                     </ul>
                 </li>
-
+                
 
 
 
@@ -618,7 +631,7 @@
                             <b class="arrow"></b>
                         </li>
 
-                        
+
 
 
                     </ul>
@@ -634,26 +647,26 @@
                     </a>
                     <b class="arrow"></b>
                     <ul class="submenu">
-                        <li class="">
-                            <a href="/#/NewPurchaseOrder">
+                        <li class="active open">
+                            <a href="/#/AddPurchaseOrder">
                                 <i class="menu-icon fa fa-caret-right"></i>
                                 Add Purchase order
                             </a>
                             <b class="arrow"></b>
                         </li>
 
-                        <li class="">
-                            <a href="/#/SearchPurchaseOrder">
+                        <li class="active open">
+                            <a href="/#/ShowOpenPurchaseOrder">
                                 <i class="menu-icon fa fa-caret-right"></i>
-                                Search Purchase order
+                                All open purchase defined by Year:Quarter
                             </a>
                             <b class="arrow"></b>
                         </li>
 
-                        <li class="">
-                            <a href="/#/UpdatePurchaseOrder">
+                        <li class="active open">
+                            <a href="/#/ShowClosePurchaseOrder">
                                 <i class="menu-icon fa fa-caret-right"></i>
-                                Update Purchase order
+                                All close purchase order aggregiation by month: product|customer
                             </a>
                             <b class="arrow"></b>
                         </li>

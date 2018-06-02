@@ -7,7 +7,7 @@ function AddRecordVendor() {
         dataType: 'json',
         data: {
             VendorName: $("#VendorName").val(), VendorCountrey: $("#VendorCountrey").val(),
-            VendorType: $("#VendorType").val(), VendorPhone: $("#CustomerRating").val()
+            VendorType: $("#VendorType").val(), CustomerRating: $("#CustomerRating").val()
         },
 
         async: false,
@@ -20,7 +20,7 @@ function AddRecordVendor() {
                 }
                 else {
                     alert("All done, new record for vendor");
-                    return trute;
+                    return true;
                 }
 
             });

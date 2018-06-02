@@ -6,11 +6,11 @@ function AddVendor() {
         url: uri,
         dataType: 'json',
         data: {
-            VendorName: $("#VendorName").val(), VendorCountrey: $("#VendorCountrey").val(),
+            VendorName: $("#VendorName").val(), VendorCompany: $("#VendorCompany").val(), VendorCountrey: $("#VendorCountrey").val(),
             VendorType: $("#VendorType").val(), VendorPhone: $("#VendorPhone").val()       
             , VendorMail: $("#VendorMail").val()
         },
-
+        
         async: false,
         success: function (data) {
 

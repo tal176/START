@@ -1,0 +1,40 @@
+﻿<table class="table table-hover">
+    <thead>
+        <tr>
+            <th class="center">
+                <label class="pos-rel">
+                    <!--<input type="checkbox" class="ace" />-->
+                    <span class="lbl"></span>
+                </label>
+            </th>
+            <th class="detail-col">Product Name</th>
+            <th>Quantity</th>
+            <th>payment</th>
+            <th>Vendor Name</th>
+            <th>Return Order\Purchase Order</th>
+            <th>Open\Close</th>
+            <th>Year</th>
+            <th>Month</th>
+            <!--<th class="hidden-480">Clicks</th>-->
+
+
+            <th>
+                <i class="ace-icon fa fa-clock-o bigger-110 hidden-480"></i>
+                Update
+            </th>
+
+        </tr>
+        <tr ng-repeat="CloseEntity in ClosePurchase">
+            <td>{{CloseEntity.ProductName}}</td>
+            <td>{{CloseEntity.Quantity}}</td>
+            <td>{{CloseEntity.payment}}</td>
+            <td>{{CloseEntity.VendorName}}</td>
+            <td>{{CloseEntity.ReturnOrderPurchaseOrder}}</td>
+            <td>{{CloseEntity.OpenClose}}</td>
+            <td>{{CloseEntity.Year}}</td>
+            <td>{{CloseEntity.Month}}</td>
+
+
+        </tr>
+    </thead>
+</table>

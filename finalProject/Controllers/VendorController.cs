@@ -25,12 +25,9 @@ namespace finalProject.Controllers
             {
                 foreach (DataRow row in ds.Tables[0].Rows)
                 {
-                    Vendor VendorEntity = new Vendor(row["VendorName"].ToString(), row["VendorCountrey"].ToString(),
-                    row["VendorType"].ToString(), row["VendorPhone"].ToString(),
-                    row["VendorMail"].ToString(),
-                    Int32.Parse(row["Record"].ToString()));
+                    Vendor VendorEntity = new Vendor(row["VendorName"].ToString(), row["VendorCompany"].ToString(), row["VendorCountrey"].ToString(),
+                    row["VendorType"].ToString(), row["VendorPhone"].ToString(), row["VendorMail"].ToString(), row["Record"].ToString());
 
-                    
                     results.Add(VendorEntity);
                     VendorEntity = null;
                     GC.Collect();
